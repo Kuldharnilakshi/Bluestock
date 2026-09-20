@@ -1,69 +1,276 @@
+// =========================================================
+// HEARTSYNC SOCKET.IO SERVICE
+// Production Backend: Render
+// =========================================================
+
 import { io } from "socket.io-client";
 
+
+// =========================================================
+// SOCKET URL
+// =========================================================
+
 const getSocketUrl = () => {
-  if (import.meta.env.VITE_SOCKET_URL) return import.meta.env.VITE_SOCKET_URL;
-  if (typeof window !== "undefined") {
-    if (window.location.port === "5173") {
-      return "http://localhost:5000";
-    }
-    return window.location.origin;
+  // Use environment variable if available
+  if (import.meta.env.VITE_SOCKET_URL) {
+    return import.meta.env.VITE_SOCKET_URL;
   }
-  return "http://localhost:5000";
+
+  // Deployed Render backend
+  return "https://heartsync-api-9706.onrender.com";
 };
 
 const SOCKET_URL = getSocketUrl();
 
+
+// =========================================================
+// SOCKET INSTANCE
+// =========================================================
+
 let socketInstance = null;
 
+
+// =========================================================
+// GET SOCKET
+// =========================================================
+
 export const getSocket = () => {
+
   if (!socketInstance) {
+
     socketInstance = io(SOCKET_URL, {
       autoConnect: true,
+
       reconnection: true,
+
       reconnectionAttempts: 5,
-      reconnectionDelay: 1000
+
+      reconnectionDelay: 1000,
+
+      transports: ["websocket", "polling"]
     });
 
+
+    // =====================================================
+    // CONNECT
+    // =====================================================
+
     socketInstance.on("connect", () => {
-      console.log("Connected to HeartSync Socket server:", socketInstance.id);
-      // Re-join user room if user is stored
+
+      console.log(
+        "Connected to HeartSync Socket server:",
+        socketInstance.id
+      );
+
+
+      // Rejoin user's room
       try {
-        const storedUser = localStorage.getItem("heartsync_user");
+
+        const storedUser =
+          localStorage.getItem("heartsync_user");
+
         if (storedUser) {
+
           const user = JSON.parse(storedUser);
+
           if (user?.id) {
-            socketInstance.emit("join_room", user.id);
+
+            socketInstance.emit(
+              "join_room",
+              user.id
+            );
+
+            console.log(
+              "Joined HeartSync room:",
+              `user_${user.id}`
+            );
           }
         }
-      } catch (e) {
-        console.error("Error rejoining socket room:", e);
+
+      } catch (error) {
+
+        console.error(
+          "Error rejoining socket room:",
+          error
+        );
       }
     });
 
-    socketInstance.on("connect_error", (err) => {
-      console.warn("Socket connection error:", err.message);
+
+    // =====================================================
+    // DISCONNECT
+    // =====================================================
+
+    socketInstance.on("disconnect", (reason) => {
+
+      console.log(
+        "HeartSync Socket disconnected:",
+        reason
+      );
+    });
+
+
+    // =====================================================
+    // CONNECTION ERROR
+    // =====================================================
+
+    socketInstance.on("connect_error", (error) => {
+
+      console.warn(
+        "HeartSync Socket connection error:",
+        error.message
+      );
+    });
+
+
+    // =====================================================
+    // RECONNECTING
+    // =====================================================
+
+    socketInstance.io.on("reconnect_attempt", (attempt) => {
+
+      console.log(
+        `HeartSync Socket reconnect attempt: ${attempt}`
+      );
+    });
+
+
+    // =====================================================
+    // RECONNECTED
+    // =====================================================
+
+    socketInstance.io.on("reconnect", (attempt) => {
+
+      console.log(
+        `HeartSync Socket reconnected after ${attempt} attempt(s)`
+      );
+
+
+      // Rejoin room after reconnect
+      try {
+
+        const storedUser =
+          localStorage.getItem("heartsync_user");
+
+        if (storedUser) {
+
+          const user = JSON.parse(storedUser);
+
+          if (user?.id) {
+
+            socketInstance.emit(
+              "join_room",
+              user.id
+            );
+          }
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Error rejoining after reconnect:",
+          error
+        );
+      }
     });
   }
+
 
   return socketInstance;
 };
 
+
+// =========================================================
+// JOIN USER ROOM
+// =========================================================
+
 export const joinUserRoom = (userId) => {
+
+  if (!userId) {
+    console.warn(
+      "Cannot join HeartSync room: userId missing"
+    );
+
+    return;
+  }
+
   const socket = getSocket();
-  if (socket && userId) {
-    socket.emit("join_room", userId);
+
+  if (socket) {
+
+    if (socket.connected) {
+
+      socket.emit(
+        "join_room",
+        userId
+      );
+
+      console.log(
+        "Joined HeartSync room:",
+        `user_${userId}`
+      );
+
+    } else {
+
+      socket.once("connect", () => {
+
+        socket.emit(
+          "join_room",
+          userId
+        );
+
+        console.log(
+          "Joined HeartSync room after connection:",
+          `user_${userId}`
+        );
+      });
+    }
   }
 };
 
-export const sendSocketMessage = (senderId, receiverId, message) => {
+
+// =========================================================
+// SEND SOCKET MESSAGE
+// =========================================================
+
+export const sendSocketMessage = (
+  senderId,
+  receiverId,
+  message
+) => {
+
+  if (!senderId || !receiverId || !message) {
+
+    console.warn(
+      "Cannot send message: missing sender, receiver or message"
+    );
+
+    return;
+  }
+
   const socket = getSocket();
+
   if (socket) {
+
     socket.emit("send_message", {
       senderId,
       receiverId,
       message
     });
+
+    console.log(
+      "HeartSync message sent:",
+      {
+        senderId,
+        receiverId
+      }
+    );
   }
 };
+
+
+// =========================================================
+// DEFAULT EXPORT
+// =========================================================
 
 export default getSocket;
