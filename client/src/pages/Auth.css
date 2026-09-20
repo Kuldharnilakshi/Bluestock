@@ -1,0 +1,736 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #090b14;
+  color: #fff;
+}
+
+/* =====================================================
+   ANIMATED BACKGROUND
+===================================================== */
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.18;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 360px;
+  height: 360px;
+  background: #ec4899;
+  top: -120px;
+  left: -100px;
+}
+
+.orb2 {
+  width: 320px;
+  height: 320px;
+  background: #8b5cf6;
+  right: -100px;
+  bottom: -100px;
+  animation-delay: 2s;
+}
+
+.orb3 {
+  width: 240px;
+  height: 240px;
+  background: #4f46e5;
+  top: 45%;
+  left: 55%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(25px, -30px);
+  }
+}
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+  z-index: 20;
+
+  color: #cbd5e1;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.auth-card {
+  width: 1000px;
+  min-height: 650px;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(236, 72, 153, 0.06);
+
+  animation: cardEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =====================================================
+   LEFT INFORMATION PANEL
+===================================================== */
+
+.info-side {
+  position: relative;
+
+  padding: 55px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 255, 255, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #ec4899 0%,
+      #c026d3 45%,
+      #7c3aed 100%
+    );
+
+  color: #fff;
+}
+
+/* Decorative heart */
+
+.info-side::after {
+  content: "♥";
+
+  position: absolute;
+
+  right: -55px;
+  bottom: -75px;
+
+  font-size: 300px;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.08);
+
+  transform:rotate(-10deg);
+
+  pointer-events: none;
+}
+
+/* Decorative circles */
+
+.info-side::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -60px;
+  top: 90px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 35px rgba(255, 255, 255, 0.04),
+    0 0 0 70px rgba(255, 255, 255, 0.025);
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+  position: relative;
+  z-index: 2;
+
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.logo span {
+  color: #ffe4f4;
+}
+
+/* =====================================================
+   INFO CONTENT
+===================================================== */
+
+.info-content {
+  position: relative;
+  z-index: 3;
+}
+
+.info-content h1 {
+  max-width: 330px;
+
+  font-size: 52px;
+  line-height: 0.98;
+  letter-spacing: -2.5px;
+
+  margin-bottom: 22px;
+}
+
+.info-content p {
+  max-width: 330px;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  margin-bottom: 35px;
+}
+
+/* =====================================================
+   SWITCH BUTTON
+===================================================== */
+
+.switch-btn {
+  padding: 15px 25px;
+
+  border: none;
+  border-radius: 40px;
+
+  background: #fff;
+  color: #7c3aed;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.switch-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================
+   INFO FOOTER
+===================================================== */
+
+.info-footer {
+  position: relative;
+  z-index: 3;
+
+  font-size: 11px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  letter-spacing: 0.3px;
+}
+
+/* =====================================================
+   RIGHT FORM PANEL
+===================================================== */
+
+.form-side {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 55px;
+
+  background: rgba(10, 14, 26, 0.62);
+
+  perspective: 1400px;
+}
+
+/* =====================================================
+   FLIP CARD
+===================================================== */
+
+.flip-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 430px;
+
+  height: 560px;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* =====================================================
+   FRONT / BACK
+===================================================== */
+
+.flip-face {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.login-face {
+  transform: rotateY(0deg);
+}
+
+.register-face {
+  transform: rotateY(180deg);
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-container {
+  width: 100%;
+}
+
+.auth-error {
+  padding: 9px 13px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.4;
+}
+
+/* Heading */
+
+.form-container h2 {
+  color: #fff;
+
+  font-size: 32px;
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  margin-bottom: 18px;
+
+  color: #7f8ba3;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   INPUT FIELDS
+===================================================== */
+
+.field {
+  width: 100%;
+
+  margin-bottom: 12px;
+}
+
+.field input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: #fff;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.field input::placeholder {
+  color: #687286;
+}
+
+.field input:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.field input:focus {
+  border-color: rgba(236, 72, 153, 0.7);
+
+  background: rgba(236, 72, 153, 0.035);
+
+  box-shadow:
+    0 0 0 4px rgba(236, 72, 153, 0.07),
+    0 10px 30px rgba(236, 72, 153, 0.08);
+}
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+.forgot {
+  text-align: right;
+
+  margin-top: -5px;
+  margin-bottom: 18px;
+
+  color: #ec4899;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.forgot:hover {
+  color: #f9a8d4;
+}
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-btn {
+  width: 100%;
+  height: 58px;
+
+  border: none;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ec4899,
+      #d946ef,
+      #8b5cf6
+    );
+
+  background-size: 200% 100%;
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(236, 72, 153, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-position 0.5s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+
+  background-position: 100% 0;
+
+  box-shadow:
+    0 18px 40px rgba(236, 72, 153, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+/* =====================================================
+   QUICK DEMO PILL HELPER
+===================================================== */
+
+.quick-demo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 96, 144, 0.08);
+  border: 1px solid rgba(255, 96, 144, 0.2);
+  font-size: 12px;
+  color: #fda4af;
+}
+
+.demo-icon {
+  font-size: 13px;
+}
+
+.demo-pill-btn {
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.demo-pill-btn:hover {
+  background: linear-gradient(135deg, #ff6090, #8b5cf6);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 96, 144, 0.3);
+}
+
+/* =====================================================
+   BOTTOM SWITCH
+===================================================== */
+
+.bottom-text {
+  margin-top: 23px;
+
+  text-align: center;
+
+  color: #69758a;
+
+  font-size: 11px;
+}
+
+.bottom-text button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ec4899;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.bottom-text button:hover {
+  color: #f9a8d4;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .auth-card {
+    width: 92vw;
+    max-width: 520px;
+    height: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+  .info-side {
+    min-height: 280px;
+    padding: 35px;
+  }
+
+  .info-content h1 {
+    font-size: 40px;
+  }
+
+  .info-content p {
+    margin-bottom: 22px;
+  }
+
+  .info-footer {
+    display: none;
+  }
+
+  .form-side {
+    min-height: 520px;
+
+    padding: 35px 30px;
+  }
+
+  .flip-card {
+    height: 470px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .auth-page {
+    padding: 70px 15px 25px;
+    overflow-y: auto;
+  }
+
+  .back-btn {
+    top: 22px;
+    left: 20px;
+    font-size: 12px;
+  }
+
+  .auth-card {
+    width: 100%;
+    border-radius: 23px;
+  }
+
+  .info-side {
+    min-height: 250px;
+    padding: 28px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .info-content h1 {
+    font-size: 36px;
+  }
+
+  .info-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .switch-btn {
+    padding: 12px 20px;
+  }
+
+  .form-side {
+    padding: 30px 22px;
+  }
+
+  .flip-card {
+    height: 450px;
+  }
+
+  .form-container h2 {
+    font-size: 29px;
+  }
+
+  .field input {
+    height: 55px;
+  }
+
+  .submit-btn {
+    height: 55px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bg-orb,
+  .auth-card {
+    animation: none;
+  }
+
+  .flip-card {
+    transition: none;
+  }
+}

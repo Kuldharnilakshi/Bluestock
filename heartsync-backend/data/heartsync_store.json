@@ -1,0 +1,342 @@
+{
+  "users": [
+    {
+      "name": "Aarav Sharma",
+      "email": "aarav@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 25,
+      "gender": "male",
+      "bio": "Software engineer by day, guitarist by night. Always down for spontaneous road trips and filter coffee.",
+      "interests": "Music, Travel, Tech, Coffee",
+      "city": "Mumbai",
+      "profile_pic": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85",
+      "id": 1,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Sophia Patel",
+      "email": "sophia@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 24,
+      "gender": "female",
+      "bio": "Book lover, foodie and someone who believes the best connections start with a good conversation.",
+      "interests": "Books, Food, Travel, Movies",
+      "city": "Mumbai",
+      "profile_pic": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85",
+      "id": 2,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Kabir Mehta",
+      "email": "kabir@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 26,
+      "gender": "male",
+      "bio": "Tech enthusiast with a soft spot for sunsets, good food and deep conversations.",
+      "interests": "Technology, Fitness, Food, Nature",
+      "city": "Bangalore",
+      "profile_pic": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=85",
+      "id": 3,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Ishita Roy",
+      "email": "ishita@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 23,
+      "gender": "female",
+      "bio": "Creative soul who enjoys photography, indie music and spontaneous weekend roadtrips.",
+      "interests": "Photography, Music, Art, Adventure",
+      "city": "Pune",
+      "profile_pic": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85",
+      "id": 4,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Nilakshi Sen",
+      "email": "nilakshi@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 24,
+      "gender": "female",
+      "bio": "Designer who loves slow mornings, meaningful conversations and discovering beautiful places.",
+      "interests": "Design, Travel, Coffee, Art",
+      "city": "Pune",
+      "profile_pic": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=85",
+      "id": 5,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Rohan Verma",
+      "email": "rohan@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 27,
+      "gender": "male",
+      "bio": "Architect with a passion for urban cycling, espresso, and modern art.",
+      "interests": "Design, Cycling, Coffee, Architecture",
+      "city": "Delhi",
+      "profile_pic": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85",
+      "id": 6,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Ananya Iyer",
+      "email": "ananya@gmail.com",
+      "password": "$2b$10$f1Z7jJHzO3qTcY3QDdpdnOiNCJoLTfnBX3r2W8NNnudCVVa/833vi",
+      "age": 24,
+      "gender": "female",
+      "bio": "Product manager & dog mom. Love hiking, pottery classes and board game nights!",
+      "interests": "Hiking, Dogs, Board Games, Pottery",
+      "city": "Bangalore",
+      "profile_pic": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=85",
+      "id": 7,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "NK",
+      "email": "nk@gmail.com",
+      "password": "$2b$10$ErGgSPu5nsM.ssuHjAxqFej//MRHvpcA00xsjHmjNaED0dmDhis6G",
+      "age": null,
+      "gender": null,
+      "bio": null,
+      "interests": null,
+      "city": null,
+      "profile_pic": null,
+      "id": 8,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    },
+    {
+      "name": "Nilakshi",
+      "email": "nilakshi123@gmail.com",
+      "password": "$2b$10$GlrokHhZncc3HOKZqxGd8OBgkGPsJ7LssOFia6pbrVcH0I449zGRK",
+      "age": 21,
+      "gender": null,
+      "bio": "",
+      "interests": "Design, Travel, Coffee, Music",
+      "city": "Maharashtra, India",
+      "profile_pic": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700",
+      "id": 9,
+      "created_at": "2026-09-18T16:58:49.641Z"
+    }
+  ],
+  "likes": [
+    {
+      "user_id": 1,
+      "liked_user_id": 2,
+      "id": 1,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 2,
+      "liked_user_id": 1,
+      "id": 2,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 1,
+      "id": 3,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 2,
+      "id": 4,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 4,
+      "id": 5,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 5,
+      "id": 6,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 6,
+      "id": 7,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 8,
+      "liked_user_id": 7,
+      "id": 8,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 1,
+      "id": 9,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 2,
+      "id": 10,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 4,
+      "id": 11,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 5,
+      "id": 12,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 6,
+      "id": 13,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 3,
+      "id": 14,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 7,
+      "id": 15,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 9,
+      "liked_user_id": 8,
+      "id": 16,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 2,
+      "liked_user_id": 3,
+      "id": 17,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 1,
+      "liked_user_id": 3,
+      "id": 18,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 3,
+      "liked_user_id": 1,
+      "id": 19,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 2,
+      "liked_user_id": 4,
+      "id": 20,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    },
+    {
+      "user_id": 4,
+      "liked_user_id": 2,
+      "id": 21,
+      "created_at": "2026-09-18T16:58:49.642Z"
+    }
+  ],
+  "matches": [
+    {
+      "user1_id": 1,
+      "user2_id": 2,
+      "id": 1,
+      "created_at": "2026-09-18T16:58:49.643Z"
+    },
+    {
+      "user1_id": 1,
+      "user2_id": 3,
+      "id": 2,
+      "created_at": "2026-09-18T16:58:49.643Z"
+    },
+    {
+      "user1_id": 2,
+      "user2_id": 4,
+      "id": 3,
+      "created_at": "2026-09-18T16:58:49.643Z"
+    }
+  ],
+  "messages": [
+    {
+      "sender_id": 2,
+      "receiver_id": 1,
+      "message": "Hey Aarav! Loved your guitar bio! What kind of music do you play? 🎸",
+      "id": 1,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 1,
+      "receiver_id": 2,
+      "message": "Hey Sophia! Mostly indie rock and acoustic fingerstyle. Nice to connect with you! 😊",
+      "id": 2,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 1,
+      "receiver_id": 2,
+      "message": "hi",
+      "id": 3,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 2,
+      "receiver_id": 1,
+      "message": "hello",
+      "id": 4,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 2,
+      "receiver_id": 1,
+      "message": "what are you doing",
+      "id": 5,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 1,
+      "receiver_id": 2,
+      "message": "nothing",
+      "id": 6,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 2,
+      "receiver_id": 1,
+      "message": "🥺🥺",
+      "id": 7,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 3,
+      "receiver_id": 1,
+      "message": "Hey! ✨ So happy we matched! Loved your profile, what's your favorite way to spend a weekend? 💖",
+      "id": 8,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 4,
+      "receiver_id": 2,
+      "message": "Hey! ✨ So happy we matched! Loved your profile, what's your favorite way to spend a weekend? 💖",
+      "id": 9,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    },
+    {
+      "sender_id": 2,
+      "receiver_id": 4,
+      "message": "🌸🌸",
+      "id": 10,
+      "created_at": "2026-09-18T16:58:49.644Z"
+    }
+  ],
+  "savedAt": "2026-09-18T17:10:33.654Z"
+}

@@ -1,0 +1,121 @@
+
+
+.chat-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.chat-row.justify-end {
+  justify-content: flex-end;
+}
+
+.chat-row.justify-start {
+  justify-content: flex-start;
+}
+
+/* Message container */
+
+.chat-row > div {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.chat-row .items-end {
+  align-items: flex-end;
+}
+
+.chat-row .items-start {
+  align-items: flex-start;
+}
+
+/* Message bubble */
+
+.chat-row .rounded-2xl {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  word-break: break-word;
+  transition: transform 0.2s ease;
+}
+
+/* Own message */
+
+.chat-row .bg-gradient-to-r {
+  background: linear-gradient(
+    135deg,
+    #ec4899,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+
+  border-bottom-right-radius: 6px;
+
+  box-shadow:
+    0 8px 24px rgba(236, 72, 153, 0.18);
+}
+
+.chat-row .bg-gradient-to-r:hover {
+  transform: translateY(-1px);
+}
+
+/* Other person's message */
+
+.chat-row .bg-slate-800 {
+  background: #1e293b;
+
+  color: #e2e8f0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom-left-radius: 6px;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Message time */
+
+.chat-row .text-slate-500 {
+  margin-top: 5px;
+  padding: 0 4px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+/* Small animation */
+
+.chat-row .rounded-2xl {
+  animation: messageAppear 0.25s ease-out;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .chat-row > div {
+    max-width: 82%;
+  }
+
+  .chat-row .rounded-2xl {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
